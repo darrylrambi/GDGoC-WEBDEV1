@@ -50,4 +50,11 @@ function editTask(id) {
 
   input.value = taskText.trim();
 
+  button.onclick = function () {
+    task.firstChild.textContent = input.value;
+    input.value = '';
+    button.textContent = "Add";
+    button.onclick = addTask;
+  };
+
 }
