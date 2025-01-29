@@ -48,11 +48,11 @@ function editTask(id) {
 
   const taskText = task.firstChild.textContent;
 
-  input.value = taskText.trim();
+  inputValue = taskText.trim();
 
   button.onclick = function () {
-    task.firstChild.textContent = input.value;
-    input.value = '';
+    task.firstChild.textContent = inputValue;
+    inputValue = '';
     button.textContent = "Add";
     button.onclick = addTask;
   };
