@@ -37,12 +37,21 @@ function deleteTask(id) {
   task.remove();
 }
 
-function editTask(id, text) {
-  const task = document.getElementById(id);
-  const inputField = document.getElementById('formInput')
+function editTask(id) {
+  const button = document.getElementById('addButton');
+  button.textContent = "Simpan";
 
+  const task = document.getElementById(id);
+  const input = document.getElementById('formInput');
   const taskText = task.firstChild.textContent;
 
-  inputField.value = taskText.trim();
+  input.value = taskText.trim();
+
+  button.onclick = function () {
+    task.firstChild.textContent = input.value;
+    input.value = '';
+    button.textContent = "Add";
+    button.onclick = addTask;
+  };
 
 }
