@@ -17,10 +17,19 @@
   <h1>Todo List</h1>
   <div class="buttonInput">
     <input class="formInput" id="formInput" type="text" placeholder="Ngapain nih hari ini?">
-    <button class="addButton" onclick="addTask()">Add Task</button>
+    <button class="addButton" id="addButton" onclick="addTask()">Add Task</button>
   </div>
   <div class="taskList">
     <ul id="taskContainer">
+      <li id="4344" class="listItem">
+        Task 1
+        <button onclick="editTask('4344')" class="editButton">
+          Edit
+        </button>
+        <button onclick="deleteTask('4344')" class="deleteButton">
+          Delete
+        </button>
+      </li>
     </ul>
   </div>
 </body>
