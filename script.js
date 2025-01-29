@@ -43,16 +43,13 @@ function editTask(id) {
 
   const task = document.getElementById(id);
   const input = document.getElementById('formInput');
-  const inputValue = input.value;
-  
-
   const taskText = task.firstChild.textContent;
 
-  inputValue = taskText.trim();
+  input.value = taskText.trim();
 
   button.onclick = function () {
-    task.firstChild.textContent = inputValue;
-    inputValue = '';
+    task.firstChild.textContent = input.value;
+    input.value = '';
     button.textContent = "Add";
     button.onclick = addTask;
   };
