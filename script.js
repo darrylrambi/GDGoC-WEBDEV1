@@ -20,7 +20,7 @@ function addTask() {
   editButton.textContent = 'Edit';
   editButton.classList.add('editButton');
   editButton.addEventListener('click', function () {
-    editTask(task.id, task.text);
+    editTask(task.id);
   })
 
   task.appendChild(editButton);
@@ -41,7 +41,8 @@ function editTask(id, text) {
   const task = document.getElementById(id);
   const inputField = document.getElementById('formInput')
 
-  inputField = text;
+  const taskText = task.firstChild.textContent;
 
+  inputField.value = taskText.trim();
 
 }
