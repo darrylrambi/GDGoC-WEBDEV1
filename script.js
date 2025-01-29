@@ -7,6 +7,7 @@ function addTask() {
   task.classList.add('listItem');
   task.id = new Date().valueOf().toString() + Math.random().toString(36).substring(2, 7);
 
+  // delete button control
   const deleteButton = document.createElement('button');
   deleteButton.textContent = 'Delete';
   deleteButton.classList.add('deleteButton');
@@ -14,6 +15,15 @@ function addTask() {
     deleteTask(task.id);
   })
 
+  // edit button control
+  const editButton = document.createElement('button');
+  editButton.textContent = 'Edit';
+  editButton.classList.add('editButton');
+  editButton.addEventListener('click', function () {
+    editTask(task.id);
+  })
+
+  task.appendChild(editButton);
   task.appendChild(deleteButton);
 
   const taskContainer = document.getElementById('taskContainer');
@@ -25,4 +35,14 @@ function addTask() {
 function deleteTask(id) {
   const task = document.getElementById(id);
   task.remove();
+}
+
+function editTask(id, text) {
+  const task = document.getElementById(id);
+  const inputField = document.getElementById('formInput')
+
+  const taskText = task.firstChild.textContent;
+
+  inputField.value = taskText.trim();
+
 }
